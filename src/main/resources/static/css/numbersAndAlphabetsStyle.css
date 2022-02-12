@@ -1,0 +1,131 @@
+body{
+
+    background-color: blanchedalmond;
+}
+
+.container {
+
+    margin: 30px auto;
+    width: 100%;
+    padding: 20px;
+}
+
+.card {
+
+    border: 1px solid darkgray;
+    padding: 1px;
+    background-color: white;
+    margin-top: 4.5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.card header {
+
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.heading {
+
+    width: 100%;
+    background-color: beige;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.resultArea {
+
+    font-size: 18px;
+    margin: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.optionsContainer {
+
+    padding: 10px;
+    background-color: #f2f2f2;
+    margin: 5px;
+    border-radius: 5px;
+    flex: 1 0 5px;
+}
+
+.optionsContainer strong {
+
+    display: inline-block;
+    margin: 5px;
+    font-size: small;
+}
+
+.radioButtons {
+    padding: 5px;
+    display: inline-block;
+}
+
+.filter {
+
+    display: flex;
+    justify-content: center;
+}
+
+/* #evenOdd{
+
+    flex: 1 0 10px;
+}
+#base{
+    flex: 1 0 10px;
+} */
+
+.generateBtn {
+
+    width: 30%;
+    height: 30px;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+    border: 1px solid whitesmoke;
+
+}
+
+.generate {
+
+    display: flex;
+    justify-content: center;
+}
+
+.inputs {
+
+    display: flex;
+    justify-content: center;
+}
+
+.lengthRange {
+
+    width: 90%;
+
+}
+
+#numberLength label{
+
+    font-size: small;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+#range_error {
+
+    font-size: small;
+    padding: 2px;
+    color: orangered;
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
