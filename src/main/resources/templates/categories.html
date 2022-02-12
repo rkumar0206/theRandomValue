@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Categories</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -16,7 +17,8 @@
 
         <th:block th:each="category, iStat : ${categories}">
 
-            <div class="categoryItem">
+            <!--When div is clicked then anchor tag will be also clicked-->
+            <div class="categoryItem" onclick="$('.categoryItem').click(function (){$(this).find('a')[0].click();});">
 
                 <a th:href="@{/categories/} + ${category.categoryName}">
 

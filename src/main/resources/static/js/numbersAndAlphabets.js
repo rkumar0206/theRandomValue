@@ -17,7 +17,7 @@ $(function () {
     let resultArea = $("#numberResultArea");
     let generateBtn = $("#numberGenerateBtn");
     let range_div = $("#range");
-    let numberLength_div = $("#numberLength");
+    let numberLength_div = $("#numberLengthDiv");
     let length_range = $("#numberLengthRange");
     let start_range_input = $("#startRangeInput")
     let end_range_input = $("#endRangeInput")
@@ -97,7 +97,13 @@ $(function () {
 
     length_range.on("input", function () {
 
-        $("#lengthRangeLabel").text($(this).val());
+        $("#numberLengthRangeLabel").text($(this).val());
+    });
+
+    length_range.on("change", function () {
+
+        generateBtn[0].click();
+
     });
 
     // will disable all the inputs inside a div
@@ -313,6 +319,8 @@ $(function () {
 
         console.log("mustIncludeCharacters : " + mustIncludeCharacters.val())
 
+        let isAdditionalCharacterIncluded = false;
+
         if (mustIncludeCharacters.val() !== '') {
 
             let str = shuffle(Array.from(mustIncludeCharacters.val()));
@@ -322,6 +330,7 @@ $(function () {
                 return str;
             }
 
+            isAdditionalCharacterIncluded = true;
             length -= str.length;
             password += str;
         }
@@ -332,6 +341,12 @@ $(function () {
         }
 
         length += mustIncludeCharacters.val().length;
+
+        // if must include characters were not empty then shuffling them with result password
+        if (isAdditionalCharacterIncluded) {
+
+            return shuffle(Array.from(password));
+        }
 
         return password;
     }
@@ -364,9 +379,9 @@ $(function () {
 
     setUUId();
 
-    $("#uuidGenerateBtn").click(function (){
+    $("#uuidGenerateBtn").click(function () {
 
-       setUUId();
+        setUUId();
     });
 
     function setUUId() {
