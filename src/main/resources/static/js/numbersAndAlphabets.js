@@ -1,3 +1,7 @@
+/**
+ * Number related
+ * Will generate random numbers based on selected parameters
+ */
 $(function () {
 
     // vars
@@ -59,6 +63,10 @@ $(function () {
         }
     });
 
+    /*
+    When range div is clicked the length range should be disabled and
+    will enable all the parameters / filters i.e. number type and base.
+     */
     range_div.click(function () {
 
         isRangeSelected = true;
@@ -70,6 +78,10 @@ $(function () {
 
     });
 
+    /*
+    When length div is clicked all the other views i.e. range, number type and base should be
+    disabled and number should be generated according to the selected length
+     */
     numberLength_div.click(function () {
 
         isRangeSelected = false;
@@ -88,6 +100,7 @@ $(function () {
         $("#lengthRangeLabel").text($(this).val());
     });
 
+    // will disable all the inputs inside a div
     function disableInputsInsideDiv(div) {
 
         div.addClass("disabled")
@@ -97,6 +110,7 @@ $(function () {
         });
     }
 
+    // will enable all the inputs inside a div
     function enableInputsInsideDiv(div) {
 
         div.removeClass("disabled")
@@ -221,6 +235,10 @@ $(function () {
     }
 });
 
+/**
+ * Password related
+ * Will generate random password based on selected parameters
+ */
 $(function () {
 
     // vars
@@ -338,6 +356,10 @@ $(function () {
 
 });
 
+/**
+ * UUID related
+ * Will generate random UUID (Universally Unique Identifier)
+ */
 $(function () {
 
     setUUId();
