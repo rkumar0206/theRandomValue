@@ -3,7 +3,10 @@ package com.rtb.therandomvalue.controllers;
 import com.rtb.therandomvalue.services.CategoryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.UUID;
 
 import static com.rtb.therandomvalue.utils.Constants.NUMBERS_AND_ALPHABETS;
 
@@ -28,5 +31,12 @@ public class CategoryController {
     public ModelAndView selectedCategory() {
 
         return new ModelAndView("numbers_and_alphabets");
+    }
+
+    @RequestMapping("/" + NUMBERS_AND_ALPHABETS + "/uuid")
+    @ResponseBody
+    public String getUUID() {
+
+        return UUID.randomUUID().toString();
     }
 }

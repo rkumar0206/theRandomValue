@@ -337,3 +337,23 @@ $(function () {
     }
 
 });
+
+$(function () {
+
+    setUUId();
+
+    $("#uuidGenerateBtn").click(function (){
+
+       setUUId();
+    });
+
+    function setUUId() {
+
+        $.get("/categories/Numbers & Alphabets/uuid", null, function (data) {
+
+            $("#uuidResultArea").text(data);
+        })
+
+    }
+
+});
