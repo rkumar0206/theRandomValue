@@ -26,13 +26,13 @@ public class TheRandomValueApplication {
     private void insertCategories() {
 
         categoryRepo.save(new Category(NUMBERS_AND_ALPHABETS, ""));
+        categoryRepo.save(new Category(DATES, ""));
         categoryRepo.save(new Category(FOOD_RECIPES, ""));
         categoryRepo.save(new Category(IMAGES, ""));
         categoryRepo.save(new Category(SHOPPING, ""));
         categoryRepo.save(new Category(GITHUB_REPOSITORIES, ""));
         categoryRepo.save(new Category(COLORS, ""));
         categoryRepo.save(new Category(VIDEOS, ""));
-        categoryRepo.save(new Category(DATES, ""));
         categoryRepo.save(new Category(ARTICLES, ""));
     }
 }

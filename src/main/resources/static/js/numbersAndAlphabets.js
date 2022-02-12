@@ -103,7 +103,6 @@ $(function () {
     length_range.on("change", function () {
 
         generateBtn[0].click();
-
     });
 
     // will disable all the inputs inside a div
