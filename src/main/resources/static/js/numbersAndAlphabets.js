@@ -35,6 +35,16 @@ $(function () {
 
     generateBtn.click(function () {
 
+        generateBtn.animate({
+            opacity: '0.5'
+        }, "fast", "swing", function () {
+
+            generateBtn.animate({
+                opacity: '1'
+            }, "fast");
+        });
+
+
         selectedNumberType = $("input[name='evenOddPrime']:checked").val();
         selectedNumberBase = $("input[name='base']:checked").val();
 
@@ -276,6 +286,15 @@ $(function () {
 
     generateBtn.click(function () {
 
+        generateBtn.animate({
+            opacity: '0.5'
+        }, "fast", "swing", function () {
+
+            generateBtn.animate({
+                opacity: '1'
+            }, "fast");
+        });
+
         $("#passwordResultArea").text(generateRandomPasswordString());
     });
 
@@ -378,7 +397,19 @@ $(function () {
 
     setUUId();
 
-    $("#uuidGenerateBtn").click(function () {
+    let generateBtn = $("#uuidGenerateBtn");
+
+    generateBtn.click(function () {
+
+        generateBtn.animate({
+            opacity: '0.5'
+        }, "fast", "swing", function () {
+
+            generateBtn.animate({
+                opacity: '1'
+            }, "fast");
+        });
+
 
         setUUId();
     });

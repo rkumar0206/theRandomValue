@@ -3,12 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Dates</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/datesStyles.css}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script th:src="@{/js/dates.js}"></script>
 </head>
 <body>
 
-<p th:text="${'Random date'}"></p>
+<div class="container">
+
+    <div class="card">
+
+        <div class="heading">
+            <header>
+                Random date
+            </header>
+        </div>
+
+        <div id="theDateDiv">
+
+            <div class="date" id="dayDiv">02</div>
+            <div class="date" id="monthDiv">June</div>
+            <div class="date" id="yearDiv">2000</div>
+
+        </div>
+
+        <hr>
+
+        <div class="generate">
+
+            <button class="generateBtn" id="dateGeneratorBtn">Generate</button>
+
+        </div>
+    </div>
+
+    <br>
+
+    <div class="card">
+
+        <div class="heading">
+
+            <header>
+                Importance
+            </header>
+
+        </div>
+
+        <iframe height="600" id="importanceIframe" src="https://en.wikipedia.org/wiki/June_02"
+                title="Importance of June 02" width="100%">Sorry unable to load content
+        </iframe>
+
+    </div>
+
+
+</div>
 
 </body>
 </html>
