@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script th:src="@{/js/dates.js}"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
 
@@ -50,9 +51,15 @@
 
         </div>
 
-        <iframe height="600" id="importanceIframe" src="https://en.wikipedia.org/wiki/June_02"
-                title="Importance of June 02" width="100%">Sorry unable to load content
-        </iframe>
+        <div class="contentWithLoading" style="height: 600px">
+
+            <iframe height="600" id="importanceIframe" src="https://en.wikipedia.org/wiki/June_02" style="border: none"
+                    title="Importance of June 02" width="100%">Sorry unable to load content
+            </iframe>
+
+            <lottie-player autoplay background="transparent" class="loadingObject" loop speed="1"
+                           src="https://assets10.lottiefiles.com/packages/lf20_ObshHL.json"></lottie-player>
+        </div>
 
     </div>
 

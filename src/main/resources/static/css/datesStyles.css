@@ -32,3 +32,16 @@
     border: 1px solid whitesmoke;
 
 }
+
+.contentWithLoading {
+
+    display: flex;
+    justify-content: center;
+}
+
+.loadingObject {
+
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}

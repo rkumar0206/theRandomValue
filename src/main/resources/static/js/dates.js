@@ -26,18 +26,21 @@ $(function () {
             }, "fast");
         });
 
-        setRandomDate()
+        setRandomDate();
     });
 
     function setRandomDate() {
 
         try {
 
-            clearTimeout(timeOutId)
+            clearTimeout(timeOutId);
 
         } catch (e) {
 
         }
+
+        $(".loadingObject").show();
+        importanceIFrame.hide();
 
         let rDate = randomDate(new Date(1900, 0, 1), new Date());
 
@@ -60,6 +63,13 @@ $(function () {
             importanceIFrame.attr({
                 "src": "https://en.wikipedia.org/wiki/" + rMonth + "_" + rDay,
                 "title": "Importance of " + rMonth + " " + rDay
+            });
+
+            importanceIFrame.on("load", function () {
+
+                $(".loadingObject").hide();
+                importanceIFrame.show();
+
             });
 
         }, 500);
