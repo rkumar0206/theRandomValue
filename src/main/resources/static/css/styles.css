@@ -36,3 +36,8 @@ body {
     padding: 0;
 
 }
+
+.radioButtons {
+    padding: 5px;
+    display: inline-block;
+}

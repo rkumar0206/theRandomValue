@@ -9,6 +9,7 @@
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script th:src="@{/js/dates.js}"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/728feeb69b.js"></script>
 </head>
 <body>
 
@@ -43,11 +44,41 @@
 
     <div class="card">
 
-        <div class="heading">
+        <div class="heading" id="date_importance_heading_container">
 
             <header>
                 Importance
             </header>
+
+            <div class="menuDropdown">
+
+                <strong>By Month and Day</strong>
+
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                <div class="dropdown-content">
+
+                    <div class="radioButtons">
+
+                        <input id="byExactDateRB" name="importance_type" type="radio" value="ByExactDate">
+                        <label for="byExactDateRB" id="byExactDateLabel">By exact date</label>
+                    </div>
+
+                    <div class="radioButtons">
+
+                        <input checked id="byMonthAndDayRB" name="importance_type" type="radio" value="ByMonth&Day">
+                        <label for="byMonthAndDayRB" id="byMonthAndDayLabel">By Month and Day</label>
+                    </div>
+
+                    <div class="radioButtons">
+                        <input id="byMonthAndYearRB" name="importance_type" type="radio" value="ByMonth&Year">
+                        <label for="byMonthAndYearRB" id="byMonthAndYearLabel">By Month and Year</label>
+                    </div>
+
+                </div>
+
+            </div>
+
 
         </div>
 

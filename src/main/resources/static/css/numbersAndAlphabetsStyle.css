@@ -22,11 +22,6 @@
     font-size: small;
 }
 
-.radioButtons {
-    padding: 5px;
-    display: inline-block;
-}
-
 .filter {
 
     display: flex;
