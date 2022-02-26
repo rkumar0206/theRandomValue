@@ -1,4 +1,4 @@
-package com.rtb.therandomvalue.models;
+package com.rtb.therandomvalue.models.entity;
 
 import javax.persistence.*;
 

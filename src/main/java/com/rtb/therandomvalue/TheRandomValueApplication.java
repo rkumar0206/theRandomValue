@@ -1,9 +1,11 @@
 package com.rtb.therandomvalue;
 
-import com.rtb.therandomvalue.models.Category;
+import com.rtb.therandomvalue.models.entity.Category;
 import com.rtb.therandomvalue.repositories.CategoryRepo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 
@@ -20,6 +22,12 @@ public class TheRandomValueApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(TheRandomValueApplication.class, args);
+    }
+
+    @Bean
+    public RestTemplate getRestTemplate() {
+
+        return new RestTemplate();
     }
 
     @PostConstruct

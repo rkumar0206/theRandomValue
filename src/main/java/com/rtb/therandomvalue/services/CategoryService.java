@@ -1,6 +1,6 @@
 package com.rtb.therandomvalue.services;
 
-import com.rtb.therandomvalue.models.Category;
+import com.rtb.therandomvalue.models.entity.Category;
 
 import java.util.List;
 

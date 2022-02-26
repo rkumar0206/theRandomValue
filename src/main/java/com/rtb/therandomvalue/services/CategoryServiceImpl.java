@@ -1,6 +1,6 @@
 package com.rtb.therandomvalue.services;
 
-import com.rtb.therandomvalue.models.Category;
+import com.rtb.therandomvalue.models.entity.Category;
 import com.rtb.therandomvalue.repositories.CategoryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
