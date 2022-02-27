@@ -1,22 +1,12 @@
 package com.rtb.therandomvalue.models.apiResponse.RecipeAPI;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Length {
     private int number;
     private String unit;
 
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
 }

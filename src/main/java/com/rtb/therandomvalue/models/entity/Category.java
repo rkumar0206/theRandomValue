@@ -1,7 +1,12 @@
 package com.rtb.therandomvalue.models.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "category_table")
 public class Category {
@@ -19,30 +24,6 @@ public class Category {
 
     public Category(String categoryName, String categoryImageUrl) {
         this.categoryName = categoryName;
-        this.categoryImageUrl = categoryImageUrl;
-    }
-
-    public Long getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-    public String getCategoryImageUrl() {
-        return categoryImageUrl;
-    }
-
-    public void setCategoryImageUrl(String categoryImageUrl) {
         this.categoryImageUrl = categoryImageUrl;
     }
 }
