@@ -3,31 +3,40 @@ package com.rtb.therandomvalue.controllers;
 import com.rtb.therandomvalue.models.apiResponse.RecipeAPI.Recipe;
 import com.rtb.therandomvalue.services.RecipeService;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 
-@RestController
+import static com.rtb.therandomvalue.utils.Constants.FOOD_RECIPES;
+
 @Slf4j
 @AllArgsConstructor
+@Controller
 public class RecipeController {
 
     private final RecipeService recipeService;
 
-    @PostMapping("/recipe/random")
-    public ResponseEntity<Recipe> getRecipe(@RequestBody Tags tags) {
+    // todo : remove this method after a while
+    @GetMapping("/recipe/random")
+    public ResponseEntity<Recipe> getRecipe(@RequestParam Optional<String> tags) {
 
-        log.info("Tags : " + tags.getTags());
+        Recipe recipe;
 
-        Recipe recipe = recipeService.getRandomRecipe(new ArrayList<>(tags.getTags()));
+        if (tags.isPresent()) {
+
+            recipe = recipeService.getRandomRecipe(tags.get());
+        } else {
+
+            recipe = recipeService.getRandomRecipe("");
+        }
 
         if (recipe == null) {
 
@@ -37,12 +46,31 @@ public class RecipeController {
         return new ResponseEntity<>(recipe, HttpStatus.OK);
     }
 
-}
+    @GetMapping("/categories/" + FOOD_RECIPES)
+    public ModelAndView foodRecipeCategory(@RequestParam Optional<String> tags) {
 
-@Getter
-@Setter
-class Tags {
+        Recipe recipe = null;
 
-    private List<String> tags;
+        if (tags.isPresent()) {
+
+            recipe = recipeService.getRandomRecipe(tags.get());
+        } else {
+
+            recipe = recipeService.getRandomRecipe("");
+        }
+
+        Map<String, Object> recipeMap = new HashMap<>();
+
+        if (recipe == null) {
+
+            recipeMap.put("isResultValid", false);
+        } else {
+
+            recipeMap.put("isResultValid", true);
+            recipeMap.put("recipe", recipe);
+        }
+
+        return new ModelAndView("foodRecipes", "recipe", recipeMap);
+    }
 
 }

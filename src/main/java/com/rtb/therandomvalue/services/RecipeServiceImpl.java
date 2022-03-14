@@ -2,30 +2,33 @@ package com.rtb.therandomvalue.services;
 
 import com.rtb.therandomvalue.models.apiResponse.RecipeAPI.Recipe;
 import com.rtb.therandomvalue.models.apiResponse.RecipeAPI.RecipeResponse;
-import lombok.AllArgsConstructor;
+import com.rtb.therandomvalue.utils.StringUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
-
 @Service
 @Slf4j
-@AllArgsConstructor
 public class RecipeServiceImpl implements RecipeService {
 
-    private final RestTemplate restTemplate;
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Value("${api.key.recipe}")
+    private String recipeAPIKey;
 
     @Override
-    public Recipe getRandomRecipe(List<String> tags) {
+    public Recipe getRandomRecipe(String tags) {
 
-        String BASE_URL = "https://api.spoonacular.com/recipes/random";
+        String BASE_URL = "https://api.spoonacular.com/recipes/random?apiKey=" + recipeAPIKey;
 
         StringBuilder url = new StringBuilder(BASE_URL);
 
-        if (tags != null && !tags.isEmpty()) {
+        if (StringUtils.isValid(tags)) {
 
-            url.append("?tags=").append(String.join(",", tags));
+            url.append("&tags=").append(tags);
         }
 
         log.info("Recipe api url : " + url);

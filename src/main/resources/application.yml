@@ -12,3 +12,7 @@ spring:
     password:
   application:
     name: theRandomValue
+
+api:
+  key:
+    recipe: ${RECIPE_API_KEY}
