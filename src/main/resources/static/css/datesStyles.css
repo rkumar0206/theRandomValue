@@ -33,19 +33,6 @@
 
 }
 
-.contentWithLoading {
-
-    display: flex;
-    justify-content: center;
-}
-
-.loadingObject {
-
-    margin: auto;
-    width: 100px;
-    height: 100px;
-}
-
 #date_importance_heading_container {
 
     display: flex;

@@ -41,3 +41,16 @@ body {
     padding: 5px;
     display: inline-block;
 }
+
+.contentWithLoading {
+
+    display: flex;
+    justify-content: center;
+}
+
+.loadingObject {
+
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}

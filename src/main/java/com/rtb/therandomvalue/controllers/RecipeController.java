@@ -51,13 +51,13 @@ public class RecipeController {
 
         Recipe recipe = null;
 
-        if (tags.isPresent()) {
-
-            recipe = recipeService.getRandomRecipe(tags.get());
-        } else {
-
-            recipe = recipeService.getRandomRecipe("");
-        }
+//        if (tags.isPresent()) {
+//
+//            recipe = recipeService.getRandomRecipe(tags.get());
+//        } else {
+//
+//            recipe = recipeService.getRandomRecipe("");
+//        }
 
         Map<String, Object> recipeMap = new HashMap<>();
 

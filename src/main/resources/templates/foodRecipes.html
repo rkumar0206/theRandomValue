@@ -5,15 +5,42 @@
     <meta charset="UTF-8">
     <title>Random food recipe</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/foodRecipeStyle.css}">
     <script crossorigin="anonymous"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/728feeb69b.js"></script>
+
 </head>
 <body>
 
 <div class="container">
 
-    Random food recipe here
+    <div class="card">
+
+        <div class="heading">
+            <header>
+                Random recipe
+            </header>
+        </div>
+
+
+        <div class="recipeContent contentWithLoading">
+
+
+            <lottie-player autoplay background="transparent" class="loadingObject" loop speed="1"
+                           src="https://assets10.lottiefiles.com/packages/lf20_ObshHL.json"></lottie-player>
+        </div>
+
+        <hr>
+
+        <div class="generate">
+
+            <button class="generateBtn" id="dateGeneratorBtn">Generate</button>
+
+        </div>
+    </div>
 
 </div>
 

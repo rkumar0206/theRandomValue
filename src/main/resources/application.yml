@@ -12,6 +12,9 @@ spring:
     password:
   application:
     name: theRandomValue
+  h2:
+    console:
+      enabled: true
 
 api:
   key:
