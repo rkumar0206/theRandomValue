@@ -71,7 +71,7 @@ public class RecipeController {
             RecipeBO recipeBO = recipeService.insertRecipeToDatabaseFromRecipeAPI(recipe);
 
             recipeMap.put("isResultValid", true);
-            recipeMap.put("recipe", recipeBO);
+            recipeMap.put("recipeBO", recipeBO);
         }
 
         return new ModelAndView("foodRecipes", "recipe", recipeMap);
