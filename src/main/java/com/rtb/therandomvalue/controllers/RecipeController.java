@@ -1,6 +1,7 @@
 package com.rtb.therandomvalue.controllers;
 
 import com.rtb.therandomvalue.models.apiResponse.RecipeAPI.Recipe;
+import com.rtb.therandomvalue.models.entity.recipe.RecipeBO;
 import com.rtb.therandomvalue.services.RecipeService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,16 +27,17 @@ public class RecipeController {
 
     // todo : remove this method after a while
     @GetMapping("/recipe/random")
-    public ResponseEntity<Recipe> getRecipe(@RequestParam Optional<String> tags) {
+    public ResponseEntity<RecipeBO> getRecipe(@RequestParam Optional<String> tags) {
 
         Recipe recipe;
 
         if (tags.isPresent()) {
 
-            recipe = recipeService.getRandomRecipe(tags.get());
+            recipe = recipeService.getRandomRecipeFromAPI(tags.get());
+
         } else {
 
-            recipe = recipeService.getRandomRecipe("");
+            recipe = recipeService.getRandomRecipeFromAPI("");
         }
 
         if (recipe == null) {
@@ -43,7 +45,7 @@ public class RecipeController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
-        return new ResponseEntity<>(recipe, HttpStatus.OK);
+        return new ResponseEntity<>(recipeService.insertRecipeToDatabaseFromRecipeAPI(recipe), HttpStatus.OK);
     }
 
     @GetMapping("/categories/" + FOOD_RECIPES)
@@ -53,10 +55,10 @@ public class RecipeController {
 
 //        if (tags.isPresent()) {
 //
-//            recipe = recipeService.getRandomRecipe(tags.get());
+//            recipe = recipeService.getRandomRecipeFromAPI(tags.get());
 //        } else {
 //
-//            recipe = recipeService.getRandomRecipe("");
+//            recipe = recipeService.getRandomRecipeFromAPI("");
 //        }
 
         Map<String, Object> recipeMap = new HashMap<>();
@@ -66,8 +68,10 @@ public class RecipeController {
             recipeMap.put("isResultValid", false);
         } else {
 
+            RecipeBO recipeBO = recipeService.insertRecipeToDatabaseFromRecipeAPI(recipe);
+
             recipeMap.put("isResultValid", true);
-            recipeMap.put("recipe", recipe);
+            recipeMap.put("recipe", recipeBO);
         }
 
         return new ModelAndView("foodRecipes", "recipe", recipeMap);

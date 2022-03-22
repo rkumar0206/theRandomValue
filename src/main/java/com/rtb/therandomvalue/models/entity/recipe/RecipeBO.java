@@ -1,9 +1,6 @@
 package com.rtb.therandomvalue.models.entity.recipe;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,6 +9,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "RECIPE")
 public class RecipeBO {
@@ -31,7 +29,7 @@ public class RecipeBO {
     @CollectionTable(name = "recipe_steps", joinColumns = @JoinColumn(name = "recipe_id"))
     @AttributeOverrides({
             @AttributeOverride(name = "number", column = @Column(name = "number")),
-            @AttributeOverride(name = "stepName", column = @Column(name = "step_name"))
+            @AttributeOverride(name = "stepName", column = @Column(name = "step_name", length = 1000))
     })
     private List<StepBO> steps;
 
