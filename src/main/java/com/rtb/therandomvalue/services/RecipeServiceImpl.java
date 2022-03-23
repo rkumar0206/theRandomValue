@@ -1,5 +1,6 @@
 package com.rtb.therandomvalue.services;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rtb.therandomvalue.models.apiResponse.RecipeAPI.Recipe;
 import com.rtb.therandomvalue.models.apiResponse.RecipeAPI.RecipeResponse;
 import com.rtb.therandomvalue.models.entity.recipe.RecipeBO;
@@ -13,6 +14,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Optional;
 
 @Service
@@ -76,6 +79,8 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public RecipeBO insertRecipeToDatabaseFromRecipeAPI(Recipe recipe) {
 
+        appendRecipeJsonToExternalFile(recipe);
+
         RecipeBO tempRecipeBO = getRecipeById((long) recipe.getId());
 
         if (tempRecipeBO == null) {
@@ -91,6 +96,26 @@ public class RecipeServiceImpl implements RecipeService {
         } else {
 
             return tempRecipeBO;
+        }
+    }
+
+    private void appendRecipeJsonToExternalFile(Recipe recipe) {
+
+        try {
+            FileWriter writer = new FileWriter("R:\\RecipeJson.txt", true);
+
+            ObjectMapper mapper = new ObjectMapper();
+
+            String recipeJson = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(recipe);
+
+            writer.write("" + recipeJson);
+            writer.write("\n\n------------------------\n\n");
+
+            writer.flush();
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

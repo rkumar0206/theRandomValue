@@ -63,15 +63,18 @@ public class RecipeController {
 
         Map<String, Object> recipeMap = new HashMap<>();
 
-        if (recipe == null) {
+        recipeMap.put("isResultValid", false);
+        recipeMap.put("recipeBO", "");
 
-            recipeMap.put("isResultValid", false);
-        } else {
+        if (recipe != null) {
 
             RecipeBO recipeBO = recipeService.insertRecipeToDatabaseFromRecipeAPI(recipe);
 
             recipeMap.put("isResultValid", true);
             recipeMap.put("recipeBO", recipeBO);
+
+            log.info("recipeBO : " + recipeBO);
+
         }
 
         return new ModelAndView("foodRecipes", "recipe", recipeMap);

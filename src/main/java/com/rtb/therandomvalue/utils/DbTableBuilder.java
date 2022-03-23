@@ -21,6 +21,7 @@ public class DbTableBuilder {
                 .name(ingredient.getName())
                 .original(ingredient.getOriginal())
                 .unit(ingredient.getUnit())
+                .consistency(ingredient.getConsistency())
                 .build();
 
     }
@@ -44,6 +45,7 @@ public class DbTableBuilder {
                 .licence(recipe.getLicense())
                 .sourceName(recipe.getSourceName())
                 .sourceUrl(recipe.getSourceUrl())
+                .imageUrl(recipe.getImage())
                 .steps(recipe.getAnalyzedInstructions().get(0).getSteps().stream()
                         .map(DbTableBuilder::buildStepBO)
                         .collect(Collectors.toList()))

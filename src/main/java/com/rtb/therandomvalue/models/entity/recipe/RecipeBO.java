@@ -12,6 +12,7 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "RECIPE")
+@ToString
 public class RecipeBO {
 
     @Id
@@ -24,6 +25,7 @@ public class RecipeBO {
     private String licence;
     private String sourceName;
     private String sourceUrl;
+    private String imageUrl;
 
     @ElementCollection
     @CollectionTable(name = "recipe_steps", joinColumns = @JoinColumn(name = "recipe_id"))

@@ -1,10 +1,8 @@
 package com.rtb.therandomvalue.models.apiResponse.RecipeAPI;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class Ingredient {
     private int id;
     private String name;

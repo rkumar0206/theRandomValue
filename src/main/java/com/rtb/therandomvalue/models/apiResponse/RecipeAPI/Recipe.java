@@ -1,14 +1,16 @@
 package com.rtb.therandomvalue.models.apiResponse.RecipeAPI;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Recipe {
     private boolean vegetarian;
     private boolean vegan;

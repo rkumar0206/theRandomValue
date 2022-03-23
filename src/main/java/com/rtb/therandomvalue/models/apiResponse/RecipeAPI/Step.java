@@ -1,12 +1,10 @@
 package com.rtb.therandomvalue.models.apiResponse.RecipeAPI;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.util.ArrayList;
 
-@Getter
-@Setter
+@Data
 public class Step {
     private int number;
     private String step;

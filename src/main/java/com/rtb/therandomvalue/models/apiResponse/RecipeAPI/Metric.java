@@ -1,10 +1,8 @@
 package com.rtb.therandomvalue.models.apiResponse.RecipeAPI;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class Metric {
     private double amount;
     private String unitShort;

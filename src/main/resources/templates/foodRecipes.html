@@ -9,11 +9,9 @@
     <script crossorigin="anonymous"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script crossorigin="anonymous" src="https://kit.fontawesome.com/728feeb69b.js"></script>
 
 </head>
-<body>
+<body th:with="theRecipe=${recipe.recipeBO}, isValid=${recipe.isResultValid}">
 
 <div class="container">
 
@@ -26,18 +24,105 @@
         </div>
 
 
-        <div class="recipeContent contentWithLoading">
+        <div class="recipeContent">
+
+            <div th:if="${isValid}">
+
+                <div class="recipeImage_and_basci_info_container">
+
+                    <div class="recipeImage_name">
+
+                        <img height="200px" id="recipeImage" th:src="@{${theRecipe.imageUrl}}">
+                        <hr>
+                        <h3 id="recipeName" th:text="${theRecipe.title}">Title of the recipe</h3>
+
+                    </div>
+
+                    <div class="recipe_basic_info">
+
+                        <table>
+
+                            <tr>
+                                <th>Vegetarian</th>
+                                <td th:text="${theRecipe.isVeg}">false</td>
+                            </tr>
+
+                            <tr>
+                                <th>Cheap</th>
+                                <td th:text="${theRecipe.isCheap}">false</td>
+                            </tr>
+
+                            <tr>
+                                <th>Very healhty</th>
+                                <td th:text="${theRecipe.isVeryHealthy}">false</td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div id="ingredients">
+
+                    <strong>Ingredients : </strong>
+
+                    <table>
+
+                        <tr>
+
+                            <th>SNo.</th>
+                            <th>Name</th>
+                            <th>Consistency</th>
+                            <th>Amount</th>
+
+                        </tr>
+
+                        <tr th:each="ingredient, iStat : ${theRecipe.ingredients}">
+
+                            <td th:text="${iStat.index + 1}"></td>
+                            <td th:text="${ingredient.name}"></td>
+                            <td th:text="${ingredient.consistency}"></td>
+                            <td th:text="${ingredient.amount + ' ' + ingredient.unit}"></td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+                <hr>
+
+                <div id="steps">
+
+                    <div class="step-container">
+
+                        <strong>Steps : </strong>
+
+                        <div class="step-content" th:each="step : ${theRecipe.steps}">
+
+                            <span th:text="${step.number + '.'}"></span>
+                            <span th:text="${step.stepName}"></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div th:unless="${isValid}"></div>
 
 
-            <lottie-player autoplay background="transparent" class="loadingObject" loop speed="1"
-                           src="https://assets10.lottiefiles.com/packages/lf20_ObshHL.json"></lottie-player>
         </div>
 
         <hr>
 
         <div class="generate">
 
-            <button class="generateBtn" id="dateGeneratorBtn">Generate</button>
+            <button class="generateBtn" id="dateGeneratorBtn">Refresh</button>
 
         </div>
     </div>

@@ -15,5 +15,6 @@ public class IngredientsBO {
     private String name;
     private String original;
     private double amount;
+    private String consistency; // solid, liquid
     private String unit;
 }
