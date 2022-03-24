@@ -36,7 +36,7 @@
     flex: 1 0 10px;
 } */
 
-.generateBtn {
+.refreshBtn {
 
     width: 30%;
     height: 30px;
@@ -48,7 +48,7 @@
 
 }
 
-.generate {
+.refresh {
 
     display: flex;
     justify-content: center;

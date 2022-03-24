@@ -15,7 +15,7 @@ $(function () {
 
     // views
     let resultArea = $("#numberResultArea");
-    let generateBtn = $("#numberGenerateBtn");
+    let numberRefreshBtn = $("#numberRefreshBtn");
     let range_div = $("#range");
     let numberLength_div = $("#numberLengthDiv");
     let length_range = $("#numberLengthRange");
@@ -33,13 +33,13 @@ $(function () {
 
     resultArea.text(getRandomNumberResult());
 
-    generateBtn.click(function () {
+    numberRefreshBtn.click(function () {
 
-        generateBtn.animate({
+        numberRefreshBtn.animate({
             opacity: '0.5'
         }, "fast", "swing", function () {
 
-            generateBtn.animate({
+            numberRefreshBtn.animate({
                 opacity: '1'
             }, "fast");
         });
@@ -112,7 +112,7 @@ $(function () {
 
     length_range.on("change", function () {
 
-        generateBtn[0].click();
+        numberRefreshBtn[0].click();
     });
 
     // will disable all the inputs inside a div
@@ -265,12 +265,12 @@ $(function () {
     let includeUpperCaseCB = $("#includeUpperCaseCB");
     let includeLowerCaseCB = $("#includeLowerCaseCB");
     let passwordLengthRange = $("#passwordLengthRange");
-    let generateBtn = $("#passwordGenerateBtn");
+    let refreshBtn = $("#passwordRefreshBtn");
     let mustIncludeCharacters = $("#mustIncludeCharacters");
 
     length = Number(passwordLengthRange.val());
 
-    $("#passwordResultArea").text(generateRandomPasswordString());
+    $("#passwordResultArea").text(refreshRandomPasswordString());
 
     passwordLengthRange.on("input", function () {
 
@@ -281,24 +281,24 @@ $(function () {
 
     passwordLengthRange.on("change", function () {
 
-        $("#passwordResultArea").text(generateRandomPasswordString());
+        $("#passwordResultArea").text(refreshRandomPasswordString());
     });
 
-    generateBtn.click(function () {
+    refreshBtn.click(function () {
 
-        generateBtn.animate({
+        refreshBtn.animate({
             opacity: '0.5'
         }, "fast", "swing", function () {
 
-            generateBtn.animate({
+            refreshBtn.animate({
                 opacity: '1'
             }, "fast");
         });
 
-        $("#passwordResultArea").text(generateRandomPasswordString());
+        $("#passwordResultArea").text(refreshRandomPasswordString());
     });
 
-    function generateRandomPasswordString() {
+    function refreshRandomPasswordString() {
 
         let upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         let lowerCaseLetters = upperCaseLetters.toLowerCase();
@@ -397,15 +397,15 @@ $(function () {
 
     setUUId();
 
-    let generateBtn = $("#uuidGenerateBtn");
+    let refreshBtn = $("#uuidRefreshBtn");
 
-    generateBtn.click(function () {
+    refreshBtn.click(function () {
 
-        generateBtn.animate({
+        refreshBtn.animate({
             opacity: '0.5'
         }, "fast", "swing", function () {
 
-            generateBtn.animate({
+            refreshBtn.animate({
                 opacity: '1'
             }, "fast");
         });

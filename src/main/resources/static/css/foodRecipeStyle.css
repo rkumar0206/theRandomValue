@@ -1,10 +1,10 @@
-.generate {
+.refresh {
 
     display: flex;
     justify-content: center;
 }
 
-.generateBtn {
+.refreshBtn {
 
     width: 30%;
     height: 30px;
@@ -16,7 +16,7 @@
 
 }
 
-.recipeImage_and_basci_info_container {
+.recipeImage_and_basic_info_container {
 
     display: flex;
 }

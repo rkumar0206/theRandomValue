@@ -5,7 +5,7 @@ $(function () {
     let dayDiv = $("#dayDiv");
     let monthDiv = $("#monthDiv");
     let yearDiv = $("#yearDiv");
-    let generateBtn = $("#dateGeneratorBtn");
+    let dateRefreshBtn = $("#dateRefreshBtn");
     let importanceIFrame = $("#importanceIframe");
 
     let url = "";
@@ -30,13 +30,13 @@ $(function () {
 
     // ---------------- Event Listeners --------------------------
 
-    generateBtn.click(function () {
+    dateRefreshBtn.click(function () {
 
-        generateBtn.animate({
+        dateRefreshBtn.animate({
             opacity: '0.5'
         }, "fast", "swing", function () {
 
-            generateBtn.animate({
+            dateRefreshBtn.animate({
                 opacity: '1'
             }, "fast");
         });

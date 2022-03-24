@@ -28,7 +28,7 @@
 
             <div th:if="${isValid}">
 
-                <div class="recipeImage_and_basci_info_container">
+                <div class="recipeImage_and_basic_info_container">
 
                     <div class="recipeImage_name">
 
@@ -55,6 +55,13 @@
                             <tr>
                                 <th>Very healhty</th>
                                 <td th:text="${theRecipe.isVeryHealthy}">false</td>
+                            </tr>
+
+                            <tr>
+
+                                <th>Source</th>
+                                <td><a target="_blank" th:href="@{${theRecipe.sourceUrl}}"
+                                       th:text="${theRecipe.sourceUrl}"></a></td>
                             </tr>
 
                         </table>
@@ -120,9 +127,9 @@
 
         <hr>
 
-        <div class="generate">
+        <div class="refresh">
 
-            <button class="generateBtn" id="dateGeneratorBtn">Refresh</button>
+            <button class="refreshBtn" id="recipeRefreshBtn" onclick="window.location.reload();">Refresh</button>
 
         </div>
     </div>
