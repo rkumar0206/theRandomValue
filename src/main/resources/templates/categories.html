@@ -23,7 +23,13 @@
 
                 <a th:href="@{/categories/} + ${category.categoryName}">
 
-                    <img th:src="@{/images/shopping.svg}" th:width="250" th:height="100" alt="Category image"/>
+                    <img alt="Category image" th:height="100" th:if="${category.categoryImageUrl == ''}"
+                         th:src="@{'https://drive.google.com/uc?export=view&id=1vFOaBnvw3CgxTKqIQY3xVuTP99-6ukKO'}"
+                         th:width="250"/>
+
+                    <img alt="Category image" th:height="100" th:src="@{${category.categoryImageUrl}}"
+                         th:unless="${category.categoryImageUrl == ''}" th:width="250"/>
+
                     <hr>
                     <span class="categoryName" th:text="${category.categoryName}"></span>
                 </a>
