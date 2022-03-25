@@ -8,6 +8,9 @@
     <script crossorigin="anonymous"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script th:src="@{/js/images.js}"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/728feeb69b.js"></script>
 </head>
 <body>
 
@@ -26,11 +29,11 @@
             <div class="image_filter" id="image_size_div">
 
                 <label for="image_width">Width</label>
-                <input class="number_input" id="image_width" max="2400" min="200" type="number" value="600">
+                <input class="number_input" id="image_width" max="2400" min="200" type="number" value="1920">
                 <br>
                 <br>
                 <label for="image_height">Height</label>
-                <input class="number_input" id="image_height" max="2400" min="300" type="number" value="600">
+                <input class="number_input" id="image_height" max="2400" min="300" type="number" value="1080">
 
             </div>
 
@@ -60,9 +63,14 @@
 
     </div>
 
-    <div class="card" id="result_image_div">
+    <div class="card contentWithLoading" id="result_image_div">
 
-        <iframe height="700px" src="https://picsum.photos/200/300?random=1" width="100%">Sorry unable to load</iframe>
+        <iframe height="600px" id="imageIFrame" src="https://picsum.photos/1920/1080?random=1" style="border: none"
+                title="Image 1920x1080" width="100%">Sorry unable to load the image
+        </iframe>
+
+        <lottie-player autoplay background="transparent" class="loadingObject" loop speed="1"
+                       src="https://assets10.lottiefiles.com/packages/lf20_ObshHL.json"></lottie-player>
     </div>
 
 
