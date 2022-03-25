@@ -8,8 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.UUID;
 
-import static com.rtb.therandomvalue.utils.Constants.DATES;
-import static com.rtb.therandomvalue.utils.Constants.NUMBERS_AND_ALPHABETS;
+import static com.rtb.therandomvalue.utils.Constants.*;
 
 @Controller
 @RequestMapping("/categories")
@@ -34,16 +33,24 @@ public class CategoryController {
         return new ModelAndView("numbers_and_alphabets");
     }
 
-    @RequestMapping("/" + DATES)
-    public ModelAndView dateCategory() {
-
-        return new ModelAndView("dates");
-    }
-
     @RequestMapping("/" + NUMBERS_AND_ALPHABETS + "/uuid")
     @ResponseBody
     public String getUUID() {
 
         return UUID.randomUUID().toString();
     }
+
+    @RequestMapping("/" + DATES)
+    public ModelAndView dateCategory() {
+
+        return new ModelAndView("dates");
+    }
+
+    @RequestMapping("/" + IMAGES)
+    public ModelAndView imagesCategory() {
+
+        return new ModelAndView("images");
+    }
+
+
 }

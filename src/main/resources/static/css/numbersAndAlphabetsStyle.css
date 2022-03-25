@@ -36,24 +36,6 @@
     flex: 1 0 10px;
 } */
 
-.refreshBtn {
-
-    width: 30%;
-    height: 30px;
-    background-color: blueviolet;
-    color: white;
-    border-radius: 10px;
-    margin: 10px 10px 20px;
-    border: 1px solid whitesmoke;
-
-}
-
-.refresh {
-
-    display: flex;
-    justify-content: center;
-}
-
 .inputs {
 
     display: flex;

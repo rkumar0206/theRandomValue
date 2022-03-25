@@ -1,0 +1,47 @@
+.image_filters_container {
+
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly
+}
+
+.image_filter {
+
+    padding: 20px;
+    background-color: aliceblue;
+    width: 40%;
+}
+
+#result_image_div {
+
+    margin-top: 20px;
+}
+
+#image_width {
+
+    margin-left: 20px;
+
+}
+
+#image_height {
+
+    margin-left: 18px;
+}
+
+.number_input {
+
+    padding: 5px;
+
+}
+
+label {
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 5px;
+    margin-top: 2px;
+}
+
+#blur_level {
+
+    margin-left: 10px;
+}

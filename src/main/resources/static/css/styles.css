@@ -54,3 +54,21 @@ body {
     width: 100px;
     height: 100px;
 }
+
+.refresh {
+
+    display: flex;
+    justify-content: center;
+}
+
+.refreshBtn {
+
+    width: 30%;
+    height: 30px;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 10px;
+    margin: 10px 10px 20px;
+    border: 1px solid whitesmoke;
+
+}

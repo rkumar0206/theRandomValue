@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Random images</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/imagesStyles.css}">
+    <script crossorigin="anonymous"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="heading">
+            <header>
+                Random Image
+            </header>
+        </div>
+
+        <div class="image_filters_container">
+
+            <div class="image_filter" id="image_size_div">
+
+                <label for="image_width">Width</label>
+                <input class="number_input" id="image_width" max="2400" min="200" type="number" value="600">
+                <br>
+                <br>
+                <label for="image_height">Height</label>
+                <input class="number_input" id="image_height" max="2400" min="300" type="number" value="600">
+
+            </div>
+
+            <div class="image_filter" id="image_properties_div">
+
+                <input id="grayscaleCB" type="checkbox">
+                <label for="grayscaleCB">Grayscale</label>
+
+                <br>
+                <br>
+
+                <input id="blurCB" type="checkbox">
+                <label for="blurCB">Blur</label>
+                <input class="number_input" id="blur_level" max="10" min="1" type="number" value="1">
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="refresh">
+
+            <button class="refreshBtn" id="imageRefreshBtn">Refresh</button>
+
+        </div>
+
+    </div>
+
+    <div class="card" id="result_image_div">
+
+        <iframe height="700px" src="https://picsum.photos/200/300?random=1" width="100%">Sorry unable to load</iframe>
+    </div>
+
+
+</div>
+
+</body>
+</html>
