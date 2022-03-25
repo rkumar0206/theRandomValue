@@ -9,6 +9,6 @@ public class Constants {
     public static final String GITHUB_REPOSITORIES = "Github Repositories";
     public static final String COLORS = "Colors";
     public static final String VIDEOS = "Videos";
-    public static final String ARTICLES = "Article";
+    public static final String ARTICLES = "Articles";
     public static final String DATES = "Dates";
 }
