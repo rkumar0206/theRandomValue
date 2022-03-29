@@ -17,8 +17,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.Arrays;
 
-import static com.rtb.therandomvalue.utils.Constants.DATES;
-import static com.rtb.therandomvalue.utils.Constants.NUMBERS_AND_ALPHABETS;
+import static com.rtb.therandomvalue.utils.Constants.*;
 import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -59,6 +58,16 @@ public class CategoryControllerTest {
                 .andExpect(view().name("numbers_and_alphabets"));
 
     }
+
+    @Test
+    public void imagesCategoryTest() throws Exception {
+
+        mockMvc.perform(MockMvcRequestBuilders.get(base_url + "/" + IMAGES))
+                .andExpect(status().isOk())
+                .andExpect(view().name("images"));
+
+    }
+
 
     @Test
     public void dateCategory() throws Exception {
